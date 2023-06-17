@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Map with Markers</title>
+    <style>
+      #map {
+        height: 800px;
+        width: 100%;
+      }
+    </style>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+  </head>
+  <body>
+    <div id="map"></div>
+
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script>
+      // Initialize the map
+      var map = L.map('map').setView([43.815553510976535, -111.78541224151488], 16);
+
+      // Add the base map tiles (you can choose different tile layers)
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: 'Map data © <a href="https://openstreetmap.org">OpenStreetMap</a> contributors',
+        maxZoom: 18
+      }).addTo(map);
+
+      // Array of marker locations
+      var markerLocations = [
+      
+      
+      {lat: 43.81107486599218,  lng: -111.77909333813938, title: 'Temple', info: 'Rexburg Temple' },
+      { lat: 43.82067429316495, lng: -111.78536635820362, title: 'stadium', info: 'BYUI Stadium' },
+      { lat: 43.819459794082896,lng: -111.78296354428693, title: 'library', info: 'David O mcKay Library' },
+      { lat: 43.81957902071382, lng:  -111.78500592038779, title: 'hart', info: 'Hart Fitness Center' },
+      { lat: 43.818641425180516,lng:  -111.7849778240588, title: 'icenter', info: 'BYU-Idaho Center' },
+      { lat: 43.818466550330754,lng:  -111.7828313539497, title: 'MC', info: 'Manwaring Center' },
+      { lat: 43.81709259765157, lng:  -111.78269225227443, title: 'taylor', info: 'John Taylor Building' },
+      { lat: 43.81553155465582, lng:  -111.7830575047418, title: 'benson', info: 'Ezra Taft Benson Building' },
+      { lat: 43.81453814240153, lng:  -111.78456065897635, title: 'stc', info: 'Science & Technology Center' },
+      { lat: 43.81481484710224, lng:  -111.78160363261064, title: 'ricks', info: 'Thomas E Ricks Building' },
+      { lat: 43.81574743435316, lng:  -111.77972820184482, title: 'hinkley', info: 'Gordon B Hinkley Building' },
+      { lat: 43.81568234281608, lng:  -111.7819118723968, title: 'garden', info: 'Ricks Gardens' },
+      { lat: 43.82023606428154, lng:  -111.78167842000248, title: 'clark', info: 'John Clarke Building' },
+      { lat: 43.82004672385053,  lng: -111.78317835851453, title: 'romney', info: 'Romney Building' },
+      { lat: 43.821141403013506,  lng:  -111.78363492418255, title: 'snow', info: 'Eliza R Snow Building' },
+      { lat: 43.81698144587727,   lng:  -111.78151214962386, title: 'kimball', info: 'Spencer W Kimball Building' },
+      { lat: 43.810244160428006,    lng:  -111.78534252158344, title: 'sports', info: 'BYU-I Sports Complex' },
+      { lat: 43.815819135172816,    lng:  -111.78441198177134 , title: 'austin', info: 'Mark Austin Building' },
+      { lat: 43.81908192852073,     lng:  -111.78143297964657 , title: 'smith', info: 'Joseph Fielding Smith Building' },
+      { lat: 43.820854434516605,   lng:   -111.7825387283544   , title: 'spori', info: 'Jacob Spori Building' },
+      
+
+       ];
+
+      // Create markers and popups
+      markerLocations.forEach(location => {
+        var marker = L.marker([location.lat, location.lng]).addTo(map);
+        marker.bindPopup(location.info);
+      });
+    </script>
+  </body>
+</html>
