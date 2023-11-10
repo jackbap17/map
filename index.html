@@ -1,22 +1,43 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Map with Markers</title>
+    <title>Rexburg Map</title>
     <style>
+      
       #map {
         height: 800px;
         width: 100%;
+        align-self: start;
+        border: 50px;
+        border-radius: 10px;
+  
+      }
+      .map-container {
+        text-align: center;
+        margin-bottom: 20px;
+        
+      }
+      
+      .map-title {
+        font-size: 50px;
+        font-weight: bold;
+        color: aliceblue;
+        background-color: royalblue;
+        border-radius: 30px;
       }
     </style>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
   </head>
   <body>
-    <div id="map"></div>
+    <div class="map-container">
+      <h1 class="map-title">BYU-Idaho</h1>
+    </div>
+    <div id="map" style="height: 800px; width: 100%;"></div>
 
-    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="https  vg.com/leaflet@1.7.1/dist/leaflet.js"></script>
     <script>
-      // Initialize the map
-      var map = L.map('map').setView([43.815553510976535, -111.78541224151488], 16);
+      // Initialize th  v
+      var map = L.map(  vsetView([43.815553510976535, -111.78541224151488], 16);
 
       // Add the base map tiles (you can choose different tile layers)
       L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
