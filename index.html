@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BYU-I MAP</title>
@@ -8,15 +8,15 @@
         #map {
             height: 800px;
             width: 100%;
-            border: 2px solid #0073e6; /* Dark blue border */
+            border: 2px solid #0073e6; /* Dark blue */
             border-radius: 10px;
         }
 
         .map-title {
             font-size: 36px;
             font-weight: bold;
-            color: #0073e6; /* Dark blue text color */
-            background-color: #f0f0f0; /* Light gray background color */
+            color: #0073e6; /* Dark blue */
+            background-color: #f0f0f0; /* Light gray  */
             border-radius: 10px;
             margin: 0;
             padding: 10px;
@@ -58,9 +58,7 @@
             maxZoom: 18
         }).addTo(map);
 
-        var markerLocations = [
-            
-        ];
+        var markerLocations = [];
 
         function createMarker(latlng, title) {
             var marker = L.marker(latlng, { draggable: true, icon: customMarkerIcon }).addTo(map);
@@ -93,7 +91,17 @@
         markerLocations.forEach(location => {
             createMarker({ lat: location.lat, lng: location.lng }, location.title);
         });
+
+        // Function to display initial instructions popup
+        function displayInstructionsPopup() {
+            var instructionsPopup = L.popup()
+                .setLatLng([43.815553510976535, -111.78541224151488])
+                .setContent("<b>Welcome to the BYU-I Map!</b><br>Click on the map to add markers. You can drag and edit them.")
+                .openOn(map);
+        }
+
+        // Display instructions popup when the map is ready
+        map.whenReady(displayInstructionsPopup);
     </script>
 </body>
 </html>
-
